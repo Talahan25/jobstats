@@ -315,7 +315,7 @@ class Jobstats:
             j = d['data']['result']
             for i in j:
                 node = i['metric']['instance'].split(':')[0]
-                minor = i['metric'].get('minor_number', None)
+                minor = i['metric'].get('gpu_id', None)
                 if 'value' in i:
                     v = i['value'][1]
                 if 'values' in i:
