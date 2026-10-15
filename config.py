@@ -3,7 +3,7 @@
 ##########################
 
 # prometheus server address, port, and retention period
-PROM_SERVER = "http://cluster-stats:8480"
+PROM_SERVER = "http://muscadine-node-1.hpc.msstate.edu:8428"
 PROM_RETENTION_DAYS = 365
 
 # number of seconds between measurements
@@ -54,6 +54,7 @@ MIN_RUNTIME_SECONDS   = 10 * SAMPLING_PERIOD  # seconds
 ##                 D E T A I L E D    G P U    M E T R I C S                  ##
 ################################################################################
 GPU_METRICS_EXPORTER = "AMD"  # choices are "None" and "AMD"
+GPU_METRICS_DOCS_URL = ""
 GPU_METRICS = {
     "GFX": {
         "metric": "gpu_gfx_activity",
