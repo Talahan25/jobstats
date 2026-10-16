@@ -589,8 +589,8 @@ class ClassicOutput(BaseFormatter):
             report += f"\n{gutter}GPU memory usage per node - maximum used/total\n"
             if self.js.gpu_mem_error_code == 0:
                 for node, used, total, gpu_index in self.js.gpu_mem__node_used_total_index:
-                    hs_used = self.human_bytes(used)
-                    hs_total = self.human_bytes(total).replace(".0GB", "GB")
+                    hs_used = self.human_bytes(used* 1024 * 1024)
+                    hs_total = self.human_bytes(total * 1024 * 1024).replace(".0GB", "GB")
                     eff = 100 * used / total
                     report += f"{gutter}    {node} (GPU {gpu_index}): {hs_used}/{hs_total} ({eff:.1f}%)\n"
             else:
